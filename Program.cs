@@ -46,6 +46,42 @@ namespace m1_2
 
             Console.WriteLine("Измененный массив: " + string.Join(", ", array2));
             Console.ReadLine();
+
+
+
+            Console.WriteLine("--------------К простых чисел--------------");
+            Console.Write("Введите количество простых чисел K: ");
+            int K = int.Parse(Console.ReadLine()); // Вводит количество простых чисел
+
+            List<int> primes = new List<int>();
+            int number3 = 2;
+
+            // Находит K простых чисел
+            while (primes.Count < K)
+            {
+                bool isPrime = true;
+
+                for (int i = 2; i * i <= number3; i++) // Проверяет делимость
+                {
+                    if (number3 % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (isPrime) primes.Add(number3); // Добавляет простое число
+
+                number3++; // Следующее число
+            }
+
+            // Выводит простые числа по 10 на строке
+            for (int i = 0; i < primes.Count; i++)
+            {
+                Console.Write(primes[i] + " ");
+                if ((i + 1) % 10 == 0) Console.WriteLine(); // Переход на новую строку каждые 10 чисел
+            }
+            Console.ReadKey();
         }
     }
 }
