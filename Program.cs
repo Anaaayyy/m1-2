@@ -34,6 +34,18 @@ namespace m1_2
             Console.WriteLine("Нормированный массив: " + string.Join(", ", array));
             Console.ReadLine();
 
+            Console.WriteLine("--------------целочисленный массив из 10-ти элементов--------------");
+            int[] array2 = new int[10] { 15, 25, 35, 45, 55, 65, 75, 85, 95, 105 };
+            Console.WriteLine(string.Join(", ", array2));
+
+            Console.Write("Введите целое число для замены: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            int maxIndex = Array.IndexOf(array2, array2.Max()); // Находиm индекс максимального элемента
+            array2[maxIndex] = number; // Заменяеm его
+
+            Console.WriteLine("Измененный массив: " + string.Join(", ", array2));
+            Console.ReadLine();
         }
     }
 }
